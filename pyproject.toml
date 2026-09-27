@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "africa-energy-toolkit"
+version = "0.1.0"
+description = "Open-source renewable-energy and energy-efficiency calculations for practical African use cases."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Africa Energy Toolkit contributors"}
+]
+keywords = ["energy", "renewable-energy", "solar", "photovoltaics", "battery", "energy-efficiency", "africa"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering"
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6"
+]
+
+[project.scripts]
+aet = "aet.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["aet*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
